@@ -1,0 +1,9 @@
+{
+    "login": "words.of.game@outlook.com",
+    "password": "formationm2i",
+    "ftp": {
+        "Host": "ftp-wordsofgame.alwaysdata.net",
+        "Login": "wordsofgame",
+        "Password": "formationm2i"
+    }
+}
