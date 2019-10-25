@@ -1,12 +1,12 @@
 
-const path = require('path');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const path = require("path");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 
 module.exports = {
-    entry: './src/index.js',
+    entry: "./src/index.js",
     output: {
-        filename: 'index.js',
-        path: path.resolve(__dirname, 'www/dist'),
+        filename: "index.js",
+        path: path.resolve(__dirname, "www/dist"),
     },
     module: {
         rules: [{
@@ -17,15 +17,15 @@ module.exports = {
     },
     plugins: [
         new BrowserSyncPlugin({
-            host: 'localhost',
+            host: "localhost",
             port: 9000,
             server: {
                 baseDir: [
-                    './www/'
+                    "./www/"
                 ]
             },
             files: [
-                'www/index.html'
+                "www/index.html"
             ]
         })
     ],
