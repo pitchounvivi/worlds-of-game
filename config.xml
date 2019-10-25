@@ -4,7 +4,7 @@
     <description>
         A application that responds to the deviceready event.
     </description>
-    <author email="words.of.game@outlook.com" href="http://cordova.io">
+    <author email="worlds.of.game@outlook.com" href="http://cordova.io">
         CDA Team
     </author>
     <content src="index.html" />
