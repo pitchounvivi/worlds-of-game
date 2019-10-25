@@ -268,8 +268,8 @@ We will **connect** to the Words of Game server with the following identifiers:
 
 * [Alwaysdata](https://admin.alwaysdata.com/login/)
 
->Login : words.of.game@outlook.com </br>
-Passeword: formationm2i
+>Login : YOUR_LOGIN </br>
+Passeword: YOUR_PASSWORD
 
 ## Requirement ##
 
@@ -282,5 +282,5 @@ Passeword: formationm2i
 
 Connection with filezilla FTP </br>
 > Hote : ftp-wordsofgame.alwaysdata.net </br>
-> Login : wordsofgame </br>
-> Password : formationm2i </br>
+> Login : YOUR_FTP_LOGIN </br>
+> Password : YOUR_FTP_PASSWORD </br>
