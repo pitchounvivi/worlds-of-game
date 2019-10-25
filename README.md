@@ -281,6 +281,6 @@ Passeword: YOUR_PASSWORD
 ## To begin
 
 Connection with filezilla FTP </br>
-> Hote : ftp-wordsofgame.alwaysdata.net </br>
+> Hote : ftp-worldsofgame.alwaysdata.net </br>
 > Login : YOUR_FTP_LOGIN </br>
 > Password : YOUR_FTP_PASSWORD </br>
