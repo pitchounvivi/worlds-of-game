@@ -2,8 +2,8 @@
     "login": "worlds.of.game@outlook.com",
     "password": "formationm2i",
     "ftp": {
-        "Host": "ftp-wordsofgame.alwaysdata.net",
-        "Login": "wordsofgame",
+        "Host": "ftp-worldsofgame.alwaysdata.net",
+        "Login": "worldsofgame",
         "Password": "formationm2i"
     }
 }
