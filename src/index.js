@@ -1,8 +1,8 @@
-import { LogoComponent } from "./shared/component/logo.component";
-import { TitleComponent } from "./shared/component/title.component";
-import { RegisterButtonComponent } from "./shared/component/register-button.component";
-import { LoginFormComponent } from "./shared/component/login-form.component";
-import { User } from "./shared/models/user.models";
+import { LogoComponent } from "./shared/components/logo.component";
+import { TitleComponent } from "./shared/components/title.component";
+import { RegisterButtonComponent } from "./shared/components/register-button.component";
+import { LoginFormComponent } from "./shared/components/login-form.component";
+import { User } from "./shared/models/user.model";
 
 
 const user = new User("John", "secret");
