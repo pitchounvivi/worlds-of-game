@@ -90,10 +90,35 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("alert(\"coucou\");\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _shared_component_logo_component__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/component/logo.component */ \"./src/shared/component/logo.component.js\");\n/* harmony import */ var _shared_component_title_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./shared/component/title.component */ \"./src/shared/component/title.component.js\");\n\n\nvar parent = document.createElement(\"div\");\nnew _shared_component_logo_component__WEBPACK_IMPORTED_MODULE_0__[\"LogoComponent\"](parent);\nnew _shared_component_title_component__WEBPACK_IMPORTED_MODULE_1__[\"TitleComponent\"](parent, \"Game Session / Worlds of Game\");\ndocument.body.appendChild(parent);\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/shared/component/logo.component.js":
+/*!************************************************!*\
+  !*** ./src/shared/component/logo.component.js ***!
+  \************************************************/
+/*! exports provided: LogoComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"LogoComponent\", function() { return LogoComponent; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar LogoComponent = function LogoComponent(parent) {\n  _classCallCheck(this, LogoComponent);\n\n  var containerElement = document.createElement(\"div\");\n  var logoElement = document.createElement(\"img\");\n  logoElement.setAttribute(\"src\", \"images/logo/logo.png\");\n  logoElement.setAttribute(\"alt\", \"logo de l'application\");\n  containerElement.appendChild(logoElement);\n  parent.appendChild(containerElement);\n};\n\n//# sourceURL=webpack:///./src/shared/component/logo.component.js?");
+
+/***/ }),
+
+/***/ "./src/shared/component/title.component.js":
+/*!*************************************************!*\
+  !*** ./src/shared/component/title.component.js ***!
+  \*************************************************/
+/*! exports provided: TitleComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"TitleComponent\", function() { return TitleComponent; });\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nvar TitleComponent = function TitleComponent(parent, title) {\n  _classCallCheck(this, TitleComponent);\n\n  var containerElement = document.createElement(\"div\");\n  var titleElement = document.createElement(\"h1\");\n  var titleText = document.createTextNode(title);\n  titleElement.appendChild(titleText);\n  containerElement.appendChild(titleElement);\n  parent.appendChild(containerElement);\n};\n\n//# sourceURL=webpack:///./src/shared/component/title.component.js?");
 
 /***/ })
 
