@@ -9,7 +9,10 @@ const user = new User("John", "secret");
 
 const parent = document.createElement("div");
 
-new LogoComponent(parent);
+let logoComponent = new LogoComponent();
+logoComponent.src = "assets/images/logo/logo.png";
+logoComponent.alt = "Le LOGO de l'application";
+logoComponent.display(parent);
 
 let titleComponent = new TitleComponent();
 titleComponent.text = "Game Session / Worlds of Game";
