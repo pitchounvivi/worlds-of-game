@@ -122,6 +122,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
+/***/ "./src/app/register/register.component.js":
+/*!************************************************!*\
+  !*** ./src/app/register/register.component.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("\n\n//# sourceURL=webpack:///./src/app/register/register.component.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
@@ -130,7 +141,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _shared_models_user_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/models/user.model */ \"./src/shared/models/user.model.js\");\n/* harmony import */ var _app_login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app/login/login.component */ \"./src/app/login/login.component.js\");\n\n\nvar user = new _shared_models_user_model__WEBPACK_IMPORTED_MODULE_0__[\"User\"](\"John\", \"secret\");\nvar parent = document.createElement(\"div\");\nvar loginComponent = new _app_login_login_component__WEBPACK_IMPORTED_MODULE_1__[\"LoginComponent\"]();\nloginComponent.src = \"assets/images/logo/logo.png\";\nloginComponent.alt = \"Le LOGO de l'application\";\nloginComponent.text = \"Game Session / Worlds of Game\";\nloginComponent.loginName = \"Go\";\nloginComponent.registerName = \"Register\";\nloginComponent.user = user;\nloginComponent.display(parent);\ndocument.body.appendChild(parent);\nconsole.log(user);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _shared_models_user_model__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./shared/models/user.model */ \"./src/shared/models/user.model.js\");\n/* harmony import */ var _app_login_login_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app/login/login.component */ \"./src/app/login/login.component.js\");\n/* harmony import */ var _app_register_register_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app/register/register.component */ \"./src/app/register/register.component.js\");\n/* harmony import */ var _app_register_register_component__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app_register_register_component__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\nvar user = new _shared_models_user_model__WEBPACK_IMPORTED_MODULE_0__[\"User\"](\"John\", \"secret\");\nvar parent = document.createElement(\"div\"); // let loginComponent = new LoginComponent();\n// loginComponent.src = \"assets/images/logo/logo.png\";\n// loginComponent.alt = \"Le LOGO de l'application\";\n// loginComponent.text = \"Game Session / Worlds of Game\";\n// loginComponent.loginName = \"Go\";\n// loginComponent.registerName = \"Register\";\n// loginComponent.user = user;\n// loginComponent.display(parent);\n\ndocument.body.appendChild(parent);\nconsole.log(user);\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
