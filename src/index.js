@@ -1,32 +1,17 @@
-import { LogoComponent } from "./shared/components/logo.component";
-import { TitleComponent } from "./shared/components/title.component";
-import { RegisterButtonComponent } from "./shared/components/register-button.component";
-import { LoginFormComponent } from "./shared/components/login-form.component";
 import { User } from "./shared/models/user.model";
-
+import { LoginComponent } from "./shared/components/login.component";
 
 const user = new User("John", "secret");
-
 const parent = document.createElement("div");
 
-let logoComponent = new LogoComponent();
-logoComponent.src = "assets/images/logo/logo.png";
-logoComponent.alt = "Le LOGO de l'application";
-logoComponent.display(parent);
-
-let titleComponent = new TitleComponent();
-titleComponent.text = "Game Session / Worlds of Game";
-titleComponent.display(parent);
-
-
-let loginFormComponent = new LoginFormComponent();
-loginFormComponent.name = "Go";
-loginFormComponent.user = user;
-loginFormComponent.display(parent);
-
-let registerButtonComponent = new RegisterButtonComponent();
-registerButtonComponent.name = "Register";
-registerButtonComponent.display(parent);
+let loginComponent = new LoginComponent();
+loginComponent.src = "assets/images/logo/logo.png";
+loginComponent.alt = "Le LOGO de l'application";
+loginComponent.text = "Game Session / Worlds of Game";
+loginComponent.loginName = "Go";
+loginComponent.registerName = "Register";
+loginComponent.user = user;
+loginComponent.display(parent);
 
 document.body.appendChild(parent);
 
