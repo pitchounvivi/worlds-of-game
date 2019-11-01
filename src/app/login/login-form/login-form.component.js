@@ -1,18 +1,14 @@
-export class LoginFormComponent{
+import { Component } from "../../../shared/components/component";
+
+export class LoginFormComponent extends Component{
 
     constructor(user, loginName) {
+        super();
         this.value = user;   
         this.name = loginName;    
     }
 
     display(parent){
-        const setAttributesTo = (elem, attributes) => {
-            for (const key in attributes) {
-                elem.setAttribute(key, attributes[key]);
-            }
-        }
-
-        
         const containerElement = document.createElement("div");
         const formElement = document.createElement("form");
         const emailElement = document.createElement("input");
@@ -21,24 +17,24 @@ export class LoginFormComponent{
         let buttonText = document.createTextNode(this.name);
 
         
-        setAttributesTo(formElement, {
+        this.setAttributesTo(formElement, {
             method: "post",
             action: ""
         })
 
-        setAttributesTo(emailElement, {
+        this.setAttributesTo(emailElement, {
             type: "mail",
             placeholder: "email",
             value: this.user.login
         })
 
-        setAttributesTo(passwordElement, {
+        this.setAttributesTo(passwordElement, {
             type: "password",
             placeholder: "password",
             value: this.user.password  
         })
 
-        setAttributesTo(buttonElement, {
+        this.setAttributesTo(buttonElement, {
             type: "submit",
             name: this.name
         })

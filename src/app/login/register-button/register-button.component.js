@@ -1,13 +1,10 @@
-export class RegisterButtonComponent {
+import { Component } from "../../../shared/components/component";
+
+export class RegisterButtonComponent extends Component {
 
     constructor() {
+        super();
         this.name = "?";
-    }
-
-    setAttributesTo (element, attributes){
-        for (const key in attributes) {
-            element.setAttribute(key, attributes[key]);
-        }
     }
 
     display(parent){
