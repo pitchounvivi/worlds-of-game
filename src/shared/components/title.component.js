@@ -1,10 +1,14 @@
 export class TitleComponent {
 
-    constructor(parent, title) {
+    constructor (){
+        this.text = "?";
+    }
+
+    display(parent){
         const containerElement = document.createElement("div");
         const titleElement = document.createElement("h1");
-        const titleText = document.createTextNode(title);
-
+        let titleText = document.createTextNode(this.text);
+        
         titleElement.appendChild(titleText);
 
         containerElement.appendChild(titleElement);
