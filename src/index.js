@@ -1,6 +1,6 @@
 import { User } from "./shared/models/user.model";
 import { LoginComponent } from "./app/login/login.component";
-import { RegisterComponent } from "./app/register/register.component"
+import { RegisterComponent } from "./app/register/register.component";
 
 const user = new User("John", "secret");
 const parent = document.createElement("div");
@@ -14,7 +14,8 @@ const parent = document.createElement("div");
 // loginComponent.user = user;
 // loginComponent.display(parent);
 
-
+const registerComponent = new RegisterComponent();
+registerComponent.display(parent);
 
 document.body.appendChild(parent);
 
