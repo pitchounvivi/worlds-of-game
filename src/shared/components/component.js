@@ -9,4 +9,6 @@ export class Component {
             element.setAttribute(key, attributes[key]);
         }
     }
+
+    
 }
