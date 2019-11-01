@@ -1,7 +1,7 @@
 export class TitleComponent {
 
-    constructor (){
-        this.text = "?";
+    constructor (text){
+        this.text = text;
     }
 
     display(parent){
