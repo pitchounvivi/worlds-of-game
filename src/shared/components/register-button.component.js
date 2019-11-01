@@ -1,21 +1,26 @@
 export class RegisterButtonComponent {
 
-    constructor(parent,name){
+    constructor() {
+        this.name = "?";
+    }
+
+    setAttributesTo (element, attributes){
+        for (const key in attributes) {
+            element.setAttribute(key, attributes[key]);
+        }
+    }
+
+    display(parent){
         const containerElement = document.createElement("div");
         const registerButton = document.createElement("button");
-        let registerButtonText = document.createTextNode(name);
+        let registerButtonText = document.createTextNode(this.name);
 
         const attributes = {
-            type: "submit",
-            value: registerButtonText
+            type: "submit"
         }
 
-        const setAttributesTo = (registerButton, attributes) =>{
-            for (const key in attributes){
-                registerButton.setAttribute(key, attributes[key]);
-            }
-        }
-
+        this.setAttributesTo(registerButton, attributes);
+        
         registerButton.appendChild(registerButtonText);
         containerElement.appendChild(registerButton);
 
