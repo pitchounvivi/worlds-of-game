@@ -20,7 +20,9 @@ titleComponent.display(parent);
 
 new LoginFormComponent(parent, user);
 
-new RegisterButtonComponent(parent, "Register");
+let registerButtonComponent = new RegisterButtonComponent();
+registerButtonComponent.name = "Register";
+registerButtonComponent.display(parent);
 
 document.body.appendChild(parent);
 
