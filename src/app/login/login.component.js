@@ -1,7 +1,7 @@
-import { LogoComponent } from "./logo.component";
-import { TitleComponent } from "./title.component";
-import { LoginFormComponent } from "./login-form.component";
-import { RegisterButtonComponent } from "./register-button.component";
+import { LogoComponent } from "../../shared/components/logo/logo.component";
+import { TitleComponent } from "../../shared/components/title/title.component";
+import { LoginFormComponent } from "./login-form/login-form.component";
+import { RegisterButtonComponent } from "./register-button/register-button.component";
 
 
 export class LoginComponent {

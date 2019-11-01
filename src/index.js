@@ -1,5 +1,5 @@
 import { User } from "./shared/models/user.model";
-import { LoginComponent } from "./shared/components/login.component";
+import { LoginComponent } from "./app/login/login.component";
 
 const user = new User("John", "secret");
 const parent = document.createElement("div");
