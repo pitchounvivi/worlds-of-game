@@ -11,10 +11,14 @@ const parent = document.createElement("div");
 
 new LogoComponent(parent);
 
-new TitleComponent(parent, "Game Session / Worlds of Game");
+let titleComponent = new TitleComponent();
+titleComponent.text = "Game Session / Worlds of Game";
+titleComponent.display(parent);
 
-new LoginFormComponent(parent,user);
+new LoginFormComponent(parent, user);
 
-new RegisterButtonComponent(parent,"Register");
+new RegisterButtonComponent(parent, "Register");
 
 document.body.appendChild(parent);
+
+console.log(user)
