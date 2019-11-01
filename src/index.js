@@ -18,7 +18,11 @@ let titleComponent = new TitleComponent();
 titleComponent.text = "Game Session / Worlds of Game";
 titleComponent.display(parent);
 
-new LoginFormComponent(parent, user);
+
+let loginFormComponent = new LoginFormComponent();
+loginFormComponent.name = "Go";
+loginFormComponent.user = user;
+loginFormComponent.display(parent);
 
 let registerButtonComponent = new RegisterButtonComponent();
 registerButtonComponent.name = "Register";
