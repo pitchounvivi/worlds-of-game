@@ -160,9 +160,9 @@ export class RegisterFormComponent extends Component {
         passwordZone.appendChild(passwordLabel.appendChild(document.createTextNode("Password : ")));
         passwordZone.appendChild(passwordInput);
         formElement.appendChild(passwordZone);
-        clearButton.appendChild(document.createTextNode("Clear"))
+        clearButton.appendChild(document.createTextNode("Clear"));
         buttonZone.appendChild(clearButton);
-        saveButton.appendChild(document.createTextNode("Save"))
+        saveButton.appendChild(document.createTextNode("Save"));
         buttonZone.appendChild(saveButton);
         formElement.appendChild(buttonZone);
 
