@@ -1,38 +1,35 @@
-import { Component } from "../../../shared/components/component";
+import { InputComponent } from "../../../shared/components/input/input.component";
 
-export class RegisterFormComponent extends Component {
+export class RegisterFormComponent {
 
     constructor(user) {
-        super();
         this.user = user;
+        this.mail = new InputComponent({
+            type: "mail",
+            placeholder: "Email",
+            value: user.login
+        });
+        this.password = new InputComponent({
+            type: "password",
+            placeholder: "Password",
+            value: user.password
+        });
     }
 
     display(parent) {
-        const containerElement = document.createElement("div");
-        const formElement = document.createElement("form");
-        const loginZone = document.createElement("div");
-        const loginLabel = document.createElement("label");
-        const loginInput = document.createElement("input");
+        const container = document.createElement("register-form");
+        const form = document.createElement("form");
+        //const button = document.createElement("button");
 
-        this.setAttributesTo(formElement, {
-            method: "post",
-            action: ""
-        })
+        form.setAttribute("method", "post");
+        form.setAttribute("action", "");
+        //button.setAttribute("type", "submit");
 
-        this.setAttributesTo(loginInput, {
-            type: "mail",
-            placeholder: "email",
-            value: this.user.login
-        });
-
-
-
-
-        loginZone.appendChild(loginLabel.appendChild(document.createTextNode("login : ")));
-        loginZone.appendChild(loginInput);
-        formElement.appendChild(loginZone);
-        containerElement.appendChild(formElement);
-        parent.appendChild(containerElement);
+        container.appendChild(form);
+        //form.appendChild(button);
+        //button.appendChild(document.createTextNode("Create Account"));
+        this.mail.display(form);
+        this.password.display(form);
+        parent.appendChild(container);
     }
-
 }
