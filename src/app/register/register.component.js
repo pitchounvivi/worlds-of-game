@@ -1,5 +1,4 @@
 import { TitleComponent } from "../../shared/components/title/title.component";
-//import { User } from "../../shared/models/user.model";
 import { RegisterFormComponent } from "./register-form/register-form.component";
 
 export class RegisterComponent {
