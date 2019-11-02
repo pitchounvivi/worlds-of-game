@@ -1,5 +1,4 @@
 import { Component } from "../../../shared/components/component";
-import { InputComponent } from "../../../shared/components/input/input.component";
 
 export class RegisterFormComponent extends Component {
 
@@ -18,7 +17,7 @@ export class RegisterFormComponent extends Component {
         this.setAttributesTo(formElement, {
             method: "post",
             action: ""
-        })
+        });
 
         this.setAttributesTo(loginInput, {
             type: "mail",
@@ -26,7 +25,7 @@ export class RegisterFormComponent extends Component {
             value: this.user.login
         });
 
-        loginLabel.appendChild(document.createTextNode("login : "))
+        loginLabel.appendChild(document.createTextNode("login : "));
         loginZone.appendChild(loginLabel);
         loginZone.appendChild(loginInput);
         formElement.appendChild(loginZone);
