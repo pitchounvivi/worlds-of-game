@@ -14,7 +14,7 @@ export class RegisterButtonComponent extends Component {
 
         const attributes = {
             type: "submit"
-        }
+        };
 
         this.setAttributesTo(registerButton, attributes);
         
