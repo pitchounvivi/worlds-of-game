@@ -1,17 +1,18 @@
-import { Component } from "../component";
+export class InputComponent {
 
-export class InputComponent extends Component {
-
-    constructor() {
-        super();      
+    constructor(attributes) {
+        this.attributes = attributes;
     }
 
     display(parent) {
-        const inputElement = document.createElement("input");
-
-        setAttributesTo(inputElement, attributes);
-
-        parent.appendChild(inputElement);
+        const input = document.createElement("input");
+        for (const key in this.attributes) {
+            if (this.attributes.hasOwnProperty(key)) {
+                input.setAttribute(key, this.attributes[parseInt(key)]);
+            }
+        }
+        parent.appendChild(input);
     }
+
 
 }
