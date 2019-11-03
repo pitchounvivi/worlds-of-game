@@ -8,7 +8,7 @@ export class InputComponent {
         const input = document.createElement("input");
         for (const key in this.attributes) {
             if (this.attributes.hasOwnProperty(key)) {
-                input.setAttribute(key, this.attributes[parseInt(key)]);
+                input.setAttribute(key, this.attributes[key]);
             }
         }
         parent.appendChild(input);
