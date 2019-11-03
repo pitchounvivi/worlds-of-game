@@ -1,15 +1,76 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
+import { LabelComponent } from "../../../shared/components/label/label.component";
 
 export class RegisterFormComponent {
 
     constructor(user) {
         this.user = user;
-        this.mail = new InputComponent({
+        this.kindMrLabel = new LabelComponent("Mr : ", {
+            for: "Mr"
+        });
+        this.kindMmeLabel = new LabelComponent(" Mme : ", {
+            for: "Mme"
+        });
+        this.kindMrInput = new InputComponent({
+            type: "radio",
+            name: "kind",
+            value: "Mr"
+        });
+        this.kindMmeInput = new InputComponent({
+            type: "radio",
+            name: "kind",
+            value: "Mme"
+        });
+        this.surnameInput = new InputComponent({
+            id: "surname",
+            type: "text",
+            placeholder: "surname",
+            value: user.surname
+        });
+        this.firstnameInput = new InputComponent({
+            id: "firstname",
+            type: "text",
+            placeholder: "firstname",
+            value: user.firstname
+        });
+        this.lastnameInput = new InputComponent({
+            id: "lastname",
+            type: "text",
+            placeholder: "lastname",
+            value: user.lastname
+        });
+        this.mailInput = new InputComponent({
+            id: "mail",
             type: "mail",
             placeholder: "Email",
             value: user.mail
         });
-        this.password = new InputComponent({
+        this.phoneInput = new InputComponent({
+            id: "phone",
+            type: "phone",
+            placeholder: "phone",
+            value: user.phone
+        });
+        this.addressInput = new InputComponent({
+            id: "address",
+            type: "text",
+            placeholder: "your address",
+            value: user.address
+        });
+        this.cityInput = new InputComponent({
+            id: "city",
+            type: "text",
+            placeholder: "your city",
+            value: user.city
+        });
+        this.zipCodeInput = new InputComponent({
+            id: "zipCode",
+            type: "text",
+            placeholder: "your zipCode",
+            value: user.zipCode
+        });
+        this.passwordInput = new InputComponent({
+            id: "password",
             type: "password",
             placeholder: "Password",
             value: user.password
@@ -19,17 +80,81 @@ export class RegisterFormComponent {
     display(parent) {
         const container = document.createElement("register-form");
         const form = document.createElement("form");
-        //const button = document.createElement("button");
+        const kindZone = document.createElement("div");
+        const surnameZone = document.createElement("div");
+        const surnameLabel = document.createElement("label");
+        const firstnameZone = document.createElement("div");
+        const firstnameLabel = document.createElement("label");
+        const lastnameZone = document.createElement("div");
+        const lastnameLabel = document.createElement("label");
+        const mailZone = document.createElement("div");
+        const mailLabel = document.createElement("label");
+        const phoneZone = document.createElement("div");
+        const phoneLabel = document.createElement("label");
+        const addressZone = document.createElement("div");
+        const addressLabel = document.createElement("label");
+        const cityZone = document.createElement("div");
+        const cityLabel = document.createElement("label");
+        const zipCodeZone = document.createElement("div");
+        const zipCodeLabel = document.createElement("label");
+        const passwordZone = document.createElement("div");
+        const passwordLabel = document.createElement("label");
+        const clearButton = document.createElement("button");
+        const saveButton = document.createElement("button");
 
         form.setAttribute("method", "post");
         form.setAttribute("action", "");
-        //button.setAttribute("type", "submit");
 
         container.appendChild(form);
-        //form.appendChild(button);
-        //button.appendChild(document.createTextNode("Create Account"));
-        this.mail.display(form);
-        this.password.display(form);
+        this.kindMrLabel.display(form);
+        this.kindMrInput.display(form);
+        this.kindMmeLabel.display(form);
+        this.kindMmeInput.display(form);
+        surnameLabel.appendChild(document.createTextNode("Surname : "))
+        surnameZone.appendChild(surnameLabel);
+        form.appendChild(surnameZone);
+        this.surnameInput.display(surnameZone);
+        firstnameLabel.appendChild(document.createTextNode("Firstname : "))
+        firstnameZone.appendChild(firstnameLabel);
+        form.appendChild(firstnameZone);
+        this.firstnameInput.display(firstnameZone);
+        lastnameLabel.appendChild(document.createTextNode("Lastname : "))
+        lastnameZone.appendChild(lastnameLabel);
+        form.appendChild(lastnameZone);
+        this.lastnameInput.display(lastnameZone);
+        mailLabel.appendChild(document.createTextNode("Mail : "))
+        mailZone.appendChild(mailLabel);
+        form.appendChild(mailZone);
+        this.mailInput.display(mailZone);
+        phoneLabel.appendChild(document.createTextNode("Phone : "))
+        phoneZone.appendChild(phoneLabel);
+        form.appendChild(phoneZone);
+        this.phoneInput.display(phoneZone);
+        addressLabel.appendChild(document.createTextNode("Address : "))
+        addressZone.appendChild(addressLabel);
+        form.appendChild(addressZone);
+        this.addressInput.display(addressZone);
+        cityLabel.appendChild(document.createTextNode("City : "))
+        cityZone.appendChild(cityLabel);
+        form.appendChild(cityZone);
+        this.cityInput.display(cityZone);
+        zipCodeLabel.appendChild(document.createTextNode("Zip Code : "))
+        zipCodeZone.appendChild(zipCodeLabel);
+        form.appendChild(zipCodeZone);
+        this.addressInput.display(zipCodeZone);
+        passwordLabel.appendChild(document.createTextNode("Password : "))
+        passwordZone.appendChild(passwordLabel);
+        form.appendChild(passwordZone);
+        this.passwordInput.display(passwordZone);
+
+        clearButton.setAttribute("type", "submit");
+        saveButton.setAttribute("type", "submit");
+
+        clearButton.appendChild(document.createTextNode("Reset"));
+        saveButton.appendChild(document.createTextNode("Create Account"));
+        form.appendChild(clearButton);
+        form.appendChild(saveButton);
+        
         parent.appendChild(container);
     }
 }
