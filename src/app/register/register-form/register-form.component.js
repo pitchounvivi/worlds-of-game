@@ -106,10 +106,11 @@ export class RegisterFormComponent {
         form.setAttribute("action", "");
 
         container.appendChild(form);
-        this.kindMrLabel.display(form);
-        this.kindMrInput.display(form);
-        this.kindMmeLabel.display(form);
-        this.kindMmeInput.display(form);
+        form.appendChild(kindZone);
+        this.kindMrLabel.display(kindZone);
+        this.kindMrInput.display(kindZone);
+        this.kindMmeLabel.display(kindZone);
+        this.kindMmeInput.display(kindZone);
         surnameLabel.appendChild(document.createTextNode("Surname : "))
         surnameZone.appendChild(surnameLabel);
         form.appendChild(surnameZone);
