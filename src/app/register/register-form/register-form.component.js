@@ -7,7 +7,7 @@ export class RegisterFormComponent {
         this.mail = new InputComponent({
             type: "mail",
             placeholder: "Email",
-            value: user.login
+            value: user.mail
         });
         this.password = new InputComponent({
             type: "password",
