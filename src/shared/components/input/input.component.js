@@ -13,6 +13,4 @@ export class InputComponent {
         }
         parent.appendChild(input);
     }
-
-
 }
