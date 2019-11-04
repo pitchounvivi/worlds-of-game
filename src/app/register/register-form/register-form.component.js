@@ -172,9 +172,26 @@ export class RegisterFormComponent {
         event.preventDefault();
         console.log("Hello"); 
         
-        
+        //logger un user qui contient toutes les informations des inputs
+            //Récupérer la valeur saisie dans les inputs
+                //input.value
 
-        
-    }
+        const surnameId = document.getElementById("surname");
+        let surnameValue = surnameId.value;
+        const firstnameId = document.getElementById("firstname");
+        let firstnameValue = firstnameId.value;
+        const lastnameId = document.getElementById("lastname");
+        let lastnameValue = lastnameId.value;
+        const mailId = document.getElementById("mail");
+        let mailValue = mailId.value;
+
+        console.log(surnameValue, firstnameValue, lastnameValue, mailValue);
+
+        this.user.surname = surnameValue;
+        this.user.firstname = firstnameValue;
+        this.user.lastname = lastnameValue;
+        this.user.mail = mailValue;
+
+    };
 
 }
