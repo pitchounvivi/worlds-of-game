@@ -14,7 +14,7 @@ export class RegisterFormComponent {
         this.kindMrInput = new InputComponent({
             type: "radio",
             name: "kind",
-            value: "Mr"
+            value: "Mr"            
         });
         this.kindMmeInput = new InputComponent({
             type: "radio",
@@ -25,55 +25,64 @@ export class RegisterFormComponent {
             id: "surname",
             type: "text",
             placeholder: "surname",
-            value: user.surname
+            value: user.surname,
+            label: "Surname : "
         });
         this.firstnameInput = new InputComponent({
             id: "firstname",
             type: "text",
             placeholder: "firstname",
-            value: user.firstname
+            value: user.firstname,
+            label: "Firstname : "
         });
         this.lastnameInput = new InputComponent({
             id: "lastname",
             type: "text",
             placeholder: "lastname",
-            value: user.lastname
+            value: user.lastname,
+            label: "Lastname : "
         });
         this.mailInput = new InputComponent({
             id: "mail",
             type: "mail",
             placeholder: "Email",
-            value: user.mail
+            value: user.mail,
+            label: "Mail : "
         });
         this.phoneInput = new InputComponent({
             id: "phone",
             type: "phone",
             placeholder: "phone",
-            value: user.phone
+            value: user.phone,
+            label: "Phone : "
         });
         this.addressInput = new InputComponent({
             id: "address",
             type: "text",
             placeholder: "your address",
-            value: user.address
+            value: user.address,
+            label: "Address : "
         });
         this.cityInput = new InputComponent({
             id: "city",
             type: "text",
             placeholder: "your city",
-            value: user.city
+            value: user.city,
+            label: "City : "
         });
         this.zipCodeInput = new InputComponent({
             id: "zipCode",
             type: "text",
             placeholder: "your zipCode",
-            value: user.zipCode
+            value: user.zipCode,
+            label: "Zip Code : "
         });
         this.passwordInput = new InputComponent({
             id: "password",
             type: "password",
             placeholder: "Password",
-            value: user.password
+            value: user.password,
+            label: "Password : "
         });
     }
 
@@ -82,23 +91,14 @@ export class RegisterFormComponent {
         const form = document.createElement("form");
         const kindZone = document.createElement("div");
         const surnameZone = document.createElement("div");
-        const surnameLabel = document.createElement("label");
         const firstnameZone = document.createElement("div");
-        const firstnameLabel = document.createElement("label");
         const lastnameZone = document.createElement("div");
-        const lastnameLabel = document.createElement("label");
         const mailZone = document.createElement("div");
-        const mailLabel = document.createElement("label");
         const phoneZone = document.createElement("div");
-        const phoneLabel = document.createElement("label");
         const addressZone = document.createElement("div");
-        const addressLabel = document.createElement("label");
         const cityZone = document.createElement("div");
-        const cityLabel = document.createElement("label");
         const zipCodeZone = document.createElement("div");
-        const zipCodeLabel = document.createElement("label");
         const passwordZone = document.createElement("div");
-        const passwordLabel = document.createElement("label");
         const clearButton = document.createElement("button");
         const saveButton = document.createElement("button");
 
@@ -111,40 +111,22 @@ export class RegisterFormComponent {
         this.kindMrInput.display(kindZone);
         this.kindMmeLabel.display(kindZone);
         this.kindMmeInput.display(kindZone);
-        surnameLabel.appendChild(document.createTextNode("Surname : "))
-        surnameZone.appendChild(surnameLabel);
         form.appendChild(surnameZone);
         this.surnameInput.display(surnameZone);
-        firstnameLabel.appendChild(document.createTextNode("Firstname : "))
-        firstnameZone.appendChild(firstnameLabel);
         form.appendChild(firstnameZone);
         this.firstnameInput.display(firstnameZone);
-        lastnameLabel.appendChild(document.createTextNode("Lastname : "))
-        lastnameZone.appendChild(lastnameLabel);
         form.appendChild(lastnameZone);
         this.lastnameInput.display(lastnameZone);
-        mailLabel.appendChild(document.createTextNode("Mail : "))
-        mailZone.appendChild(mailLabel);
         form.appendChild(mailZone);
         this.mailInput.display(mailZone);
-        phoneLabel.appendChild(document.createTextNode("Phone : "))
-        phoneZone.appendChild(phoneLabel);
         form.appendChild(phoneZone);
         this.phoneInput.display(phoneZone);
-        addressLabel.appendChild(document.createTextNode("Address : "))
-        addressZone.appendChild(addressLabel);
         form.appendChild(addressZone);
         this.addressInput.display(addressZone);
-        cityLabel.appendChild(document.createTextNode("City : "))
-        cityZone.appendChild(cityLabel);
         form.appendChild(cityZone);
         this.cityInput.display(cityZone);
-        zipCodeLabel.appendChild(document.createTextNode("Zip Code : "))
-        zipCodeZone.appendChild(zipCodeLabel);
         form.appendChild(zipCodeZone);
         this.zipCodeInput.display(zipCodeZone);
-        passwordLabel.appendChild(document.createTextNode("Password : "))
-        passwordZone.appendChild(passwordLabel);
         form.appendChild(passwordZone);
         this.passwordInput.display(passwordZone);
 
