@@ -63,6 +63,18 @@ export class SearchGameFormComponent {
         locateButton.appendChild(document.createTextNode("Locate"));
         form.appendChild(locateButton);
 
+        searchButton.addEventListener(
+            "click",
+            (event) => {         
+                this.clickButton(event); 
+            }
+        );
+
         parent.appendChild(containerElement);
+    }
+
+    clickButton(event) {
+        event.preventDefault();
+        console.log("Hello");      
     }
 }
