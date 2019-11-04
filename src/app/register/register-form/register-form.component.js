@@ -156,6 +156,25 @@ export class RegisterFormComponent {
         form.appendChild(clearButton);
         form.appendChild(saveButton);
         
+        
+
+        saveButton.addEventListener(
+            "click",
+            (event) => {         
+                this.clickButton(event); 
+            }
+        );
+
         parent.appendChild(container);
     }
+
+    clickButton(event) {
+        event.preventDefault();
+        console.log("Hello"); 
+        
+        
+
+        
+    }
+
 }
