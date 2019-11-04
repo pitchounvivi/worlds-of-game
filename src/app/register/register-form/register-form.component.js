@@ -172,26 +172,32 @@ export class RegisterFormComponent {
         event.preventDefault();
         console.log("Hello"); 
         
-        //logger un user qui contient toutes les informations des inputs
-            //Récupérer la valeur saisie dans les inputs
-                //input.value
+        // Tout ce qui est commenté fonctionne (si on enlève les this.input et qu'on les remplace par input dans le input.component.js,
+        // il faut aussi supprimer la méthode value() dans le input.component.js )
+        // toutefois cela donne une méthode trop longue !!!
+        // donc on la laisse tomber et on utilise ce qui est non commenté 
 
-        const surnameId = document.getElementById("surname");
-        let surnameValue = surnameId.value;
-        const firstnameId = document.getElementById("firstname");
-        let firstnameValue = firstnameId.value;
-        const lastnameId = document.getElementById("lastname");
-        let lastnameValue = lastnameId.value;
-        const mailId = document.getElementById("mail");
-        let mailValue = mailId.value;
+        // const surnameId = document.getElementById("surname");
+        // let surnameValue = surnameId.value;
+        // const firstnameId = document.getElementById("firstname");
+        // let firstnameValue = firstnameId.value;
+        // const lastnameId = document.getElementById("lastname");
+        // let lastnameValue = lastnameId.value;
+        // const mailId = document.getElementById("mail");
+        // let mailValue = mailId.value;
+        
+        // console.log(surnameValue, firstnameValue, lastnameValue, mailValue);
 
-        console.log(surnameValue, firstnameValue, lastnameValue, mailValue);
+        // this.user.surname = surnameValue;
+        // this.user.firstname = firstnameValue;
+        // this.user.lastname = lastnameValue;
+        // this.user.mail = mailValue;
 
-        this.user.surname = surnameValue;
-        this.user.firstname = firstnameValue;
-        this.user.lastname = lastnameValue;
-        this.user.mail = mailValue;
-
+        this.user.surname = this.surnameInput.input.value;
+        this.user.firstname = this.firstnameInput.input.value;
+        this.user.lastname = this.lastnameInput.input.value;
+        this.user.mail = this.mailInput.input.value;
+        this.user.city = this.cityInput.input.value;
     };
 
 }
