@@ -155,8 +155,6 @@ export class RegisterFormComponent {
         saveButton.appendChild(document.createTextNode("Create Account"));
         form.appendChild(clearButton);
         form.appendChild(saveButton);
-        
-        
 
         saveButton.addEventListener(
             "click",
