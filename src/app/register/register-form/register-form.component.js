@@ -181,6 +181,6 @@ export class RegisterFormComponent {
         this.user.city = this.cityInput.input.value;
         this.user.zipCode = this.zipCodeInput.input.value;
         this.user.password = this.passwordInput.input.value;
-    };
+    }
 
 }
