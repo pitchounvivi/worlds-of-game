@@ -1,6 +1,6 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { LabelComponent } from "../../../shared/components/label/label.component";
-import $ from 'jquery';
+import $ from "jquery";
 
 export class RegisterFormComponent {
 
