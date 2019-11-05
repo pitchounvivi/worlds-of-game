@@ -168,9 +168,10 @@ export class RegisterFormComponent {
             url: "http://worldsofgame.alwaysdata.net/user.php",
             method: "POST",
             contentType: "application/json",
-            data: JSON.stringify(this.user)
+            data: JSON.stringify(this.user),
+            dataType: "json"
         }).then(
-            () => { console.log("Success"); }
+            (data) => { console.log(data); }
         ).catch(
             (xhr) => { console.error(xhr.status); }
         );
