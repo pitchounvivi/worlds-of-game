@@ -10,16 +10,14 @@ export class UserService {
     }
 
     static post() {
-        //on formule une requête
-        $.ajax({
+        // le return permet de renvoyer tout le $.ajax
+        return $.ajax({
             url: "http://worldsofgame.alwaysdata.net/user.php",
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(this.user),
             dataType: "json" //conversion automatique de la reponse en json
         });
-
-        return true; // cette ligne permet le renvoi du résultat de $.ajax
     }
 
 }
