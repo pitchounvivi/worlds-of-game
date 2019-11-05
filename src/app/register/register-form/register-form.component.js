@@ -6,7 +6,7 @@ export class RegisterFormComponent {
 
     constructor() {
         this.user = UserService.get();
-        
+
         this.genderMrLabel = new LabelComponent("Mr : ", {
             for: "Mr"
         });
@@ -156,7 +156,13 @@ export class RegisterFormComponent {
         event.preventDefault();
         console.log(this.user);
 
-        //faire le if des buttons radio
+        //gestion des buttons radio
+        if (this.genderMrInput.checked === true) {
+            this.user.gender = this.genderMrInput.input.value;
+        }
+        else {
+            this.user.gender = this.genderMmeInput.input.value;
+        }
 
         this.user.surname = this.surnameInput.input.value;
         this.user.firstName = this.firstnameInput.input.value;
