@@ -1,11 +1,12 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { LabelComponent } from "../../../shared/components/label/label.component";
 import $ from "jquery";
+import { UserService } from "../../../shared/services/user.service";
 
 export class RegisterFormComponent {
 
-    constructor(user) {
-        this.user = user;
+    constructor() {
+        this.user = UserService.get();
         this.kindMrLabel = new LabelComponent("Mr : ", {
             for: "Mr"
         });
@@ -26,63 +27,63 @@ export class RegisterFormComponent {
             id: "surname",
             type: "text",
             placeholder: "surname",
-            value: user.surname,
+            value: this.user.surname,
             label: "Surname : "
         });
         this.firstnameInput = new InputComponent({
             id: "firstname",
             type: "text",
             placeholder: "firstname",
-            value: user.firstName,
+            value: this.user.firstName,
             label: "Firstname : "
         });
         this.lastnameInput = new InputComponent({
             id: "lastname",
             type: "text",
             placeholder: "lastname",
-            value: user.lastName,
+            value: this.user.lastName,
             label: "Lastname : "
         });
         this.mailInput = new InputComponent({
             id: "mail",
             type: "mail",
             placeholder: "Email",
-            value: user.email,
+            value: this.user.email,
             label: "Mail : "
         });
         this.phoneInput = new InputComponent({
             id: "phone",
             type: "phone",
             placeholder: "phone",
-            value: user.phone,
+            value: this.user.phone,
             label: "Phone : "
         });
         this.addressInput = new InputComponent({
             id: "address",
             type: "text",
             placeholder: "your address",
-            value: user.adress,
+            value: this.user.adress,
             label: "Address : "
         });
         this.cityInput = new InputComponent({
             id: "city",
             type: "text",
             placeholder: "your city",
-            value: user.city,
+            value: this.user.city,
             label: "City : "
         });
         this.zipCodeInput = new InputComponent({
             id: "zipCode",
             type: "text",
             placeholder: "your zipCode",
-            value: user.zip,
+            value: this.user.zip,
             label: "Zip Code : "
         });
         this.passwordInput = new InputComponent({
             id: "password",
             type: "password",
             placeholder: "Password",
-            value: user.password,
+            value: this.user.password,
             label: "Password : "
         });
     }
@@ -151,7 +152,7 @@ export class RegisterFormComponent {
 
     clickButton(event) {
         event.preventDefault();
-        console.log("Hello");
+        console.log(this.user);
 
         this.user.surname = this.surnameInput.input.value;
         this.user.firstName = this.firstnameInput.input.value;
