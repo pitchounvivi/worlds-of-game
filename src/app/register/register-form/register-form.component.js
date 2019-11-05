@@ -6,6 +6,7 @@ export class RegisterFormComponent {
 
     constructor() {
         this.user = UserService.get();
+        
         this.genderMrLabel = new LabelComponent("Mr : ", {
             for: "Mr"
         });
@@ -89,7 +90,7 @@ export class RegisterFormComponent {
 
     display(parent) {
         const container = document.createElement("register-form");
-        const form = document.createElement("form");
+        this.form = document.createElement("form");
         const genderZone = document.createElement("div");
         const surnameZone = document.createElement("div");
         const firstnameZone = document.createElement("div");
@@ -101,46 +102,47 @@ export class RegisterFormComponent {
         const zipCodeZone = document.createElement("div");
         const passwordZone = document.createElement("div");
         const clearButton = document.createElement("button");
-        const saveButton = document.createElement("button");
+        this.saveButton = document.createElement("button");
 
-        form.setAttribute("method", "post");
-        form.setAttribute("action", "");
+        this.form.setAttribute("method", "post");
+        this.form.setAttribute("action", "");
 
-        container.appendChild(form);
-        form.appendChild(genderZone);
+        container.appendChild(this.form);
+        this.form.appendChild(genderZone);
         this.genderMrLabel.display(genderZone);
         this.genderMrInput.display(genderZone);
         this.genderMmeLabel.display(genderZone);
         this.genderMmeInput.display(genderZone);
-        form.appendChild(surnameZone);
+        this.form.appendChild(surnameZone);
         this.surnameInput.display(surnameZone);
-        form.appendChild(firstnameZone);
+        this.form.appendChild(firstnameZone);
         this.firstnameInput.display(firstnameZone);
-        form.appendChild(lastnameZone);
+        this.form.appendChild(lastnameZone);
         this.lastnameInput.display(lastnameZone);
-        form.appendChild(mailZone);
+        this.form.appendChild(mailZone);
         this.mailInput.display(mailZone);
-        form.appendChild(phoneZone);
+        this.form.appendChild(phoneZone);
         this.phoneInput.display(phoneZone);
-        form.appendChild(addressZone);
+        this.form.appendChild(addressZone);
         this.addressInput.display(addressZone);
-        form.appendChild(cityZone);
+        this.form.appendChild(cityZone);
         this.cityInput.display(cityZone);
-        form.appendChild(zipCodeZone);
+        this.form.appendChild(zipCodeZone);
         this.zipCodeInput.display(zipCodeZone);
-        form.appendChild(passwordZone);
+        this.form.appendChild(passwordZone);
         this.passwordInput.display(passwordZone);
 
         clearButton.setAttribute("type", "submit");
-        saveButton.setAttribute("type", "submit");
-        saveButton.setAttribute("value", "save");
+        clearButton.setAttribute("value", "clear");
+        this.saveButton.setAttribute("type", "submit");
+        this.saveButton.setAttribute("value", "save");
 
         clearButton.appendChild(document.createTextNode("Reset"));
-        saveButton.appendChild(document.createTextNode("Create Account"));
-        form.appendChild(clearButton);
-        form.appendChild(saveButton);
+        this.saveButton.appendChild(document.createTextNode("Create Account"));
+        this.form.appendChild(clearButton);
+        this.form.appendChild(this.saveButton);
 
-        saveButton.addEventListener(
+        this.saveButton.addEventListener(
             "click",
             (event) => {
                 this.clickButton(event);
@@ -154,7 +156,7 @@ export class RegisterFormComponent {
         event.preventDefault();
         console.log(this.user);
 
-
+        //faire le if des buttons radio
 
         this.user.surname = this.surnameInput.input.value;
         this.user.firstName = this.firstnameInput.input.value;
@@ -178,13 +180,11 @@ export class RegisterFormComponent {
                 this.postError(xhr.status);
                 this.postEnd();
             });
-
-
-
     }
 
     postStart() {
         console.log("Start");
+        this.form.removeChild(this.saveButton);
     }
 
     postEnd() {
