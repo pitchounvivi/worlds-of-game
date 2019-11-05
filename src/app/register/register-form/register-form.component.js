@@ -169,7 +169,7 @@ export class RegisterFormComponent {
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(this.user),
-            // dataType: "json" 
+            // dataType: "json" //conversion automatique de la reponse en json
         }).then(
             (data) => { console.log(JSON.parse(data)); } // c'est la version manuelle de dataType
         ).catch(
