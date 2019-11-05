@@ -192,11 +192,13 @@ export class RegisterFormComponent {
     postStart() {
         console.log("Start");
         this.loading.display(this.saveButton.parentNode);
-        this.form.removeChild(this.saveButton);   
+        this.form.removeChild(this.saveButton);  
     }
 
     postEnd() {
-        console.log("End");
+        console.log("End"); 
+        this.loading.hide(this.form);  
+        this.form.appendChild(this.saveButton);  
     }
 
     postSuccess(user) {
