@@ -22,5 +22,9 @@ export class ReturnButtonComponent extends Component {
 
         parent.appendChild(containerElement);
     }
+
+    // hide() {
+
+    // }
 }
 }
