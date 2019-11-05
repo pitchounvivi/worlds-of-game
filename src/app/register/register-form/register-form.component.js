@@ -33,21 +33,21 @@ export class RegisterFormComponent {
             id: "firstname",
             type: "text",
             placeholder: "firstname",
-            value: user.firstname,
+            value: user.firstName,
             label: "Firstname : "
         });
         this.lastnameInput = new InputComponent({
             id: "lastname",
             type: "text",
             placeholder: "lastname",
-            value: user.lastname,
+            value: user.lastName,
             label: "Lastname : "
         });
         this.mailInput = new InputComponent({
             id: "mail",
             type: "mail",
             placeholder: "Email",
-            value: user.mail,
+            value: user.email,
             label: "Mail : "
         });
         this.phoneInput = new InputComponent({
@@ -61,7 +61,7 @@ export class RegisterFormComponent {
             id: "address",
             type: "text",
             placeholder: "your address",
-            value: user.address,
+            value: user.adress,
             label: "Address : "
         });
         this.cityInput = new InputComponent({
@@ -75,7 +75,7 @@ export class RegisterFormComponent {
             id: "zipCode",
             type: "text",
             placeholder: "your zipCode",
-            value: user.zipCode,
+            value: user.zip,
             label: "Zip Code : "
         });
         this.passwordInput = new InputComponent({
@@ -154,13 +154,13 @@ export class RegisterFormComponent {
         console.log("Hello"); 
         
         this.user.surname = this.surnameInput.input.value;
-        this.user.firstname = this.firstnameInput.input.value;
-        this.user.lastname = this.lastnameInput.input.value;
-        this.user.mail = this.mailInput.input.value;
+        this.user.firstName = this.firstnameInput.input.value;
+        this.user.lastName = this.lastnameInput.input.value;
+        this.user.email = this.mailInput.input.value;
         this.user.phone = this.phoneInput.input.value;
-        this.user.address = this.addressInput.input.value;
+        this.user.adress = this.addressInput.input.value;
         this.user.city = this.cityInput.input.value;
-        this.user.zipCode = this.zipCodeInput.input.value;
+        this.user.zip = this.zipCodeInput.input.value;
         this.user.password = this.passwordInput.input.value;
 
         //on formule une requête
