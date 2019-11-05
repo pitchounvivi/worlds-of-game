@@ -35,22 +35,22 @@ export class SearchGameFormComponent {
         containerElement.appendChild(form);
         form.appendChild(dateZone);
 
-        dateLabel.appendChild(document.createTextNode("Date : "))
+        dateLabel.appendChild(document.createTextNode("Date : "));
         dateZone.appendChild(dateLabel);
         form.appendChild(dateZone);
         this.dateInput.display(dateZone);
 
-        selectLabel.appendChild(document.createTextNode("Type : "))
+        selectLabel.appendChild(document.createTextNode("Type : "));
         selectZone.appendChild(selectLabel);
         selectZone.appendChild(select); // à finir
         form.appendChild(selectZone);
 
-        nameGameLabel.appendChild(document.createTextNode("Name Game : "))
+        nameGameLabel.appendChild(document.createTextNode("Name Game : "));
         nameGameZone.appendChild(nameGameLabel);
         form.appendChild(nameGameZone);
         this.nameGameInput.display(nameGameZone);
 
-        cityLabel.appendChild(document.createTextNode("City : "))
+        cityLabel.appendChild(document.createTextNode("City : "));
         cityZone.appendChild(cityLabel);
         form.appendChild(cityZone);
         this.cityInput.display(cityZone);
