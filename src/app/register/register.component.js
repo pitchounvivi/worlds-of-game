@@ -3,10 +3,9 @@ import { RegisterFormComponent } from "./register-form/register-form.component";
 
 export class RegisterComponent {
 
-    constructor(user){
-        this.user = user;
+    constructor(){
         this.title = new TitleComponent("Register");
-        this.registerForm = new RegisterFormComponent(this.user);
+        this.registerForm = new RegisterFormComponent();
     }
 
     display(){
