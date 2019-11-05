@@ -1,6 +1,5 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { LabelComponent } from "../../../shared/components/label/label.component";
-import $ from "jquery";
 import { UserService } from "../../../shared/services/user.service";
 
 export class RegisterFormComponent {
@@ -164,19 +163,33 @@ export class RegisterFormComponent {
         this.user.zip = this.zipCodeInput.input.value;
         this.user.password = this.passwordInput.input.value;
 
-        //on formule une requête
-        $.ajax({
-            url: "http://worldsofgame.alwaysdata.net/user.php",
-            method: "POST",
-            contentType: "application/json",
-            data: JSON.stringify(this.user),
-            // dataType: "json" //conversion automatique de la reponse en json
-        }).then(
-            (data) => { console.log(JSON.parse(data)); } // c'est la version manuelle de dataType
-        ).catch(
-            (xhr) => { console.error(xhr.status); }
-        );
-
+        this.postStart();
+        //UserService.post est une promesse
+        UserService
+            .post()
+            .then((data) => {
+                this.postSuccess(data);
+                this.postEnd();
+            }
+            ).catch((xhr) => {
+                this.postError(xhr.status);
+                this.postEnd();
+            });
     }
 
+    postStart() {
+        console.log("Start");
+    }
+
+    postEnd() {
+        console.log("End");
+    }
+
+    postSuccess(user) {
+        console.log("Success");
+    }
+
+    postError(status) {
+        console.log("Error");
+    }
 }
