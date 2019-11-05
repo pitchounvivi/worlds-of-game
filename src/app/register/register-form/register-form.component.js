@@ -1,12 +1,13 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { LabelComponent } from "../../../shared/components/label/label.component";
 import { UserService } from "../../../shared/services/user.service";
+import { LoadingComponent } from "../../../shared/loading/loading.component";
 
 export class RegisterFormComponent {
 
     constructor() {
         this.user = UserService.get();
-
+        this.loading = new LoadingComponent();
         this.genderMrLabel = new LabelComponent("Mr : ", {
             for: "Mr"
         });
@@ -190,7 +191,8 @@ export class RegisterFormComponent {
 
     postStart() {
         console.log("Start");
-        this.form.removeChild(this.saveButton);
+        this.loading.display(this.saveButton.parentNode);
+        this.form.removeChild(this.saveButton);   
     }
 
     postEnd() {
