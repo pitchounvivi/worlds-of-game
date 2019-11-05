@@ -1,10 +1,10 @@
-import { User } from "./shared/models/user.model";
+
 // import { SearchGameComponent } from "./app/search-game/search-game.component";
 //import { LoginComponent } from "./app/login/login.component";
 import { RegisterComponent } from "./app/register/register.component";
 
 
-const user = new User("John", "secret");
+
 const parent = document.createElement("div");
 
 // let loginComponent = new LoginComponent();
@@ -16,7 +16,7 @@ const parent = document.createElement("div");
 // loginComponent.user = user;
 // loginComponent.display(parent);
 
-const registerComponent = new RegisterComponent(user);
+const registerComponent = new RegisterComponent();
 registerComponent.display(parent);
 
 // const searchGameComponent = new  SearchGameComponent(user);
@@ -24,4 +24,3 @@ registerComponent.display(parent);
 
 document.body.appendChild(parent);
 
-console.log(user);
