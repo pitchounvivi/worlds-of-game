@@ -165,11 +165,10 @@ export class RegisterFormComponent {
 
         //on formule une requête
         $.ajax({
-            //vivifyscrum create un utilisateur
-            url: http://worldsofgame.alwaysdata.net/user.php,
+            url: "http://worldsofgame.alwaysdata.net/user.php",
             method: "POST",
-            headers: Content-Type: application/JSON, // à compléter
-            Body: User in JSON String // à compléter
+            contentType: "application/json",
+            data: JSON.stringify(this.user)
         })
 
     }
