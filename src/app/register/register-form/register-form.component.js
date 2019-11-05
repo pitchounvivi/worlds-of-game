@@ -172,7 +172,7 @@ export class RegisterFormComponent {
         }).then(
             () => { console.log("Success"); }
         ).catch(
-            () => { console.log("Error"); }
+            (xhr) => { console.error(xhr.status); }
         );
 
     }
