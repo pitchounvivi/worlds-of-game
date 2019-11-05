@@ -1,11 +1,14 @@
-export class LoadingComponent{
-    constructor(){
-
+export class LoadingComponent {
+    constructor() {
     }
 
-    display(parent) {
-        const container = document.createElement("register-form");
-        container.appendChild(document.createTextNode("Loading"));
-        parent.appendChild(container);
+    display(parent) { 
+        this.loadingElement = document.createElement("div");
+        this.loadingElement.appendChild(document.createTextNode("Loading"));
+        parent.appendChild(this.loadingElement);
+    }
+
+    hide(parent) {
+        parent.removeChild(this.loadingElement);
     }
 }
