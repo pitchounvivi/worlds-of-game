@@ -15,7 +15,7 @@ export class RegisterFormComponent {
         this.kindMrInput = new InputComponent({
             type: "radio",
             name: "kind",
-            value: "Mr"            
+            value: "Mr"
         });
         this.kindMmeInput = new InputComponent({
             type: "radio",
@@ -141,8 +141,8 @@ export class RegisterFormComponent {
 
         saveButton.addEventListener(
             "click",
-            (event) => {         
-                this.clickButton(event); 
+            (event) => {
+                this.clickButton(event);
             }
         );
 
@@ -151,8 +151,8 @@ export class RegisterFormComponent {
 
     clickButton(event) {
         event.preventDefault();
-        console.log("Hello"); 
-        
+        console.log("Hello");
+
         this.user.surname = this.surnameInput.input.value;
         this.user.firstName = this.firstnameInput.input.value;
         this.user.lastName = this.lastnameInput.input.value;
@@ -169,7 +169,11 @@ export class RegisterFormComponent {
             method: "POST",
             contentType: "application/json",
             data: JSON.stringify(this.user)
-        })
+        }).then(
+            () => { console.log("Success"); }
+        ).catch(
+            () => { console.log("Error"); }
+        );
 
     }
 
