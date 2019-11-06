@@ -20,4 +20,27 @@ export class UserService {
         });
     }
 
+    // version requête natif
+    static put() {
+        return new Promise(
+            (resolve, reject) => {
+
+                const xhr = new XMLHttpRequest;
+                xhr.open("PUT", "url");
+                xhr.setRequestHeader("ContentType", "application/json");
+                xhr.onload = () => {
+                    if (200 === xhr.status || 201 === xhr.status) {
+                        resolve(JSON.parse(xhr.response));
+                    }
+
+                    xhr.onerror();
+                }
+                xhr.onerror = () => {
+                    reject(xhr);
+                }
+                xhr.send(JSON.stringify(user));
+            }
+        );
+    }
+
 }
