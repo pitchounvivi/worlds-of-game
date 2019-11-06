@@ -8,7 +8,7 @@ export class LoadingComponent {
         parent.appendChild(this.loadingElement);
     }
 
-    hide(parent) {
-        parent.removeChild(this.loadingElement);
+    hide() {
+        this.loadingElement.parentNode.removeChild(this.loadingElement);
     }
 }
