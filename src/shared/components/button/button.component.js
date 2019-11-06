@@ -18,7 +18,7 @@ export class ButtonComponent extends Component {
     }
 
     hide() {
-        this.element.parentNode.removeChild(this.element);
+        this.button.parentNode.removeChild(this.button);
     }
 
 }
