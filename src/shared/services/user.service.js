@@ -20,7 +20,7 @@ export class UserService {
         });
     }
 
-    // version requête natif
+    // version requête en javascript natif
     static put() {
         return new Promise(
             (resolve, reject) => {
