@@ -147,12 +147,15 @@ export class RegisterFormComponent {
         this.form.appendChild(this.clearButton);
         this.saveButton.display(this.form);
 
-        // this.saveButton.addEventListener(
-        //     "click",
-        //     (event) => {
-        //         this.clickButton(event);
-        //     }
-        // );
+        // cette écriture permet d'accéder à l'élément button 
+        // qui est dans ButtonComponent 
+        // ce qui permet de mettre l'évènement sur le bouton
+        this.saveButton.button.addEventListener(
+            "click",
+            (event) => {
+                this.clickButton(event);
+            }
+        );
 
         parent.appendChild(container);
     }
@@ -161,7 +164,7 @@ export class RegisterFormComponent {
         event.preventDefault();
         console.log(this.user);
 
-        //gestion des buttons radio
+        //gestion des buttons radio 
         if (this.genderMrInput.checked === true) {
             this.user.gender = this.genderMrInput.input.value;
         }
@@ -195,14 +198,20 @@ export class RegisterFormComponent {
 
     postStart() {
         console.log("Start");
-        this.loading.display(this.saveButton.parentNode);
-        this.form.removeChild(this.saveButton);  
+        this.loading.display(this.form);
+        this.saveButton.hide();
     }
 
     postEnd() {
         console.log("End"); 
-        this.loading.hide(this.form);  
-        this.form.appendChild(this.saveButton);  
+        this.loading.hide();
+        this.saveButton.display(this.form);
+        this.saveButton.button.addEventListener(
+            "click",
+            (event) => {
+                this.clickButton(event);
+            }
+        );
     }
 
     postSuccess(user) {
