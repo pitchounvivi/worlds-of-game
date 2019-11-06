@@ -164,15 +164,14 @@ export class RegisterFormComponent {
 
     clickButton(event) {
         event.preventDefault();
-        console.log(this.user);
 
-        //gestion des buttons radio ==> à modifier + pb de retour de valeur
-        if (this.genderMrInput.checked === true) {
-            this.user.gender = this.genderMrInput.input.value;
-        }
-        else {
-            this.user.gender = this.genderMmeInput.input.value;
-        }
+        // //gestion des buttons radio ==> à modifier + pb de retour de valeur
+        // if (this.genderMrInput.checked === true) {
+        //     this.user.gender = this.genderMrInput.input.value;
+        // }
+        // else {
+        //     this.user.gender = this.genderMmeInput.input.value;
+        // }
 
         this.user.surname = this.surnameInput.input.value;
         this.user.firstName = this.firstnameInput.input.value;
@@ -228,6 +227,10 @@ export class RegisterFormComponent {
         console.log("Error");
         if (412 === status) {
             this.alertError.error = "Bad model";
+            this.alertError.display(this.form);
+        }
+        else if (409 === status){
+            this.alertError.error = "Account already created";
             this.alertError.display(this.form);
         }
     }
