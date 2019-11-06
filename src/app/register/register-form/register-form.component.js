@@ -2,11 +2,19 @@ import { InputComponent } from "../../../shared/components/input/input.component
 import { LabelComponent } from "../../../shared/components/label/label.component";
 import { UserService } from "../../../shared/services/user.service";
 import { LoadingComponent } from "../../../shared/loading/loading.component";
+import { ButtonComponent } from "../../../shared/components/button/button.component";
 
 export class RegisterFormComponent {
 
     constructor() {
         this.user = UserService.get();
+        this.saveButton = new ButtonComponent(
+            "create Account",
+            {
+                type: "submit",
+                value: "save"
+            }
+        )
         this.loading = new LoadingComponent();
         this.genderMrLabel = new LabelComponent("Mr : ", {
             for: "Mr"
@@ -102,9 +110,8 @@ export class RegisterFormComponent {
         const cityZone = document.createElement("div");
         const zipCodeZone = document.createElement("div");
         const passwordZone = document.createElement("div");
-        const clearButton = document.createElement("button");
-        this.saveButton = document.createElement("button");
-
+        this.clearButton = document.createElement("button");
+        
         this.form.setAttribute("method", "post");
         this.form.setAttribute("action", "");
 
@@ -133,22 +140,19 @@ export class RegisterFormComponent {
         this.form.appendChild(passwordZone);
         this.passwordInput.display(passwordZone);
 
-        clearButton.setAttribute("type", "submit");
-        clearButton.setAttribute("value", "clear");
-        this.saveButton.setAttribute("type", "submit");
-        this.saveButton.setAttribute("value", "save");
+        this.clearButton.setAttribute("type", "submit");
+        this.clearButton.setAttribute("value", "clear");
+        
+        this.clearButton.appendChild(document.createTextNode("Reset"));
+        this.form.appendChild(this.clearButton);
+        this.saveButton.display(this.form);
 
-        clearButton.appendChild(document.createTextNode("Reset"));
-        this.saveButton.appendChild(document.createTextNode("Create Account"));
-        this.form.appendChild(clearButton);
-        this.form.appendChild(this.saveButton);
-
-        this.saveButton.addEventListener(
-            "click",
-            (event) => {
-                this.clickButton(event);
-            }
-        );
+        // this.saveButton.addEventListener(
+        //     "click",
+        //     (event) => {
+        //         this.clickButton(event);
+        //     }
+        // );
 
         parent.appendChild(container);
     }
