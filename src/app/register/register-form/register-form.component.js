@@ -113,7 +113,7 @@ export class RegisterFormComponent {
         const zipCodeZone = document.createElement("div");
         const passwordZone = document.createElement("div");
         this.clearButton = document.createElement("button");
-        
+
         this.form.setAttribute("method", "post");
         this.form.setAttribute("action", "");
 
@@ -144,7 +144,7 @@ export class RegisterFormComponent {
 
         this.clearButton.setAttribute("type", "submit");
         this.clearButton.setAttribute("value", "clear");
-        
+
         this.clearButton.appendChild(document.createTextNode("Reset"));
         this.form.appendChild(this.clearButton);
         this.saveButton.display(this.form);
@@ -202,11 +202,14 @@ export class RegisterFormComponent {
         console.log("Start");
         this.loading.display(this.form);
         this.saveButton.hide();
-        this.form.removeChild(this.form.firstChild);
+
+        if (this.alertError.element && this.alertError.element.parentNode) {
+            this.alertError.hide();
+        }
     }
 
     postEnd() {
-        console.log("End"); 
+        console.log("End");
         this.loading.hide();
         this.saveButton.display(this.form);
         this.saveButton.button.addEventListener(
@@ -223,8 +226,8 @@ export class RegisterFormComponent {
 
     postError(status) {
         console.log("Error");
-        if(412 === status){
-            this.alertError.error="Bad model"; 
+        if (412 === status) {
+            this.alertError.error = "Bad model";
             this.alertError.display(this.form);
         }
     }
