@@ -202,6 +202,7 @@ export class RegisterFormComponent {
         console.log("Start");
         this.loading.display(this.form);
         this.saveButton.hide();
+        this.form.removeChild(this.form.firstChild);
     }
 
     postEnd() {
