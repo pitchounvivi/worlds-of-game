@@ -1,13 +1,15 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { LabelComponent } from "../../../shared/components/label/label.component";
 import { UserService } from "../../../shared/services/user.service";
-import { LoadingComponent } from "../../../shared/loading/loading.component";
+import { LoadingComponent } from "../../../shared/components/loading/loading.component";
 import { ButtonComponent } from "../../../shared/components/button/button.component";
+import { AlertComponent } from "../../../shared/components/alert/alert.component";
 
 export class RegisterFormComponent {
 
     constructor() {
         this.user = UserService.get();
+        this.alertError = new AlertComponent();
         this.saveButton = new ButtonComponent(
             "create Account",
             {
@@ -164,7 +166,7 @@ export class RegisterFormComponent {
         event.preventDefault();
         console.log(this.user);
 
-        //gestion des buttons radio 
+        //gestion des buttons radio ==> à modifier + pb de retour de valeur
         if (this.genderMrInput.checked === true) {
             this.user.gender = this.genderMrInput.input.value;
         }
@@ -220,5 +222,9 @@ export class RegisterFormComponent {
 
     postError(status) {
         console.log("Error");
+        if(412 === status){
+            this.alertError.error="Bad model"; 
+            this.alertError.display(this.form);
+        }
     }
 }
