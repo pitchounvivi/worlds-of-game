@@ -12,6 +12,10 @@ export class HomeComponent{
         this.logo.display(parent);
         this.title.display(parent);
 
+        let question = document.createElement("p");
+        question = document.createTextNode("Ready for a Game Party ?");
+
+        parent.appendChild(question);
         document.body.appendChild(parent);
     }
 }
