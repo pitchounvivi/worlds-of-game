@@ -1,20 +1,22 @@
 import { InputComponent } from "../../../shared/components/input/input.component";
 import { ButtonComponent } from "../../../shared/components/button/button.component";
+import { UserService } from "../../../shared/services/user.service";
 
-export class LoginFormComponent{
+export class LoginFormComponent {
 
     constructor() {
+        this.user = UserService.get();
         this.loginInput = new InputComponent({
             id: "login",
             type: "mail",
             placeholder: "Your address mail",
-            value: "user"
+            value: this.user.email
         });
         this.passwordInput = new InputComponent({
             id: "password",
             type: "password",
             placeholder: "Your password",
-            value: "user"
+            value: this.user.password
         });
         this.goButton = new ButtonComponent(
             "Go",
@@ -22,17 +24,10 @@ export class LoginFormComponent{
                 type: "submit",
                 value: "go"
             }
-        )
-        this.registerButton = new ButtonComponent(
-            "Register",
-            {
-                type: "submit",
-                value: "register"
-            }
-        )  
+        )   
     }
 
-    display(parent){
+    display(parent) {
         const element = document.createElement("login-form");
         this.form = document.createElement("form");
         const loginZone = document.createElement("div");
@@ -47,10 +42,7 @@ export class LoginFormComponent{
         this.form.appendChild(passwordZone);
         this.passwordInput.display(passwordZone);
         this.goButton.display(this.form);
-        this.registerButton.display(this.form);
 
         parent.appendChild(element);
-
     }
-
 }
