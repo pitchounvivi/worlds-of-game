@@ -1,7 +1,6 @@
 import { TitleComponent } from "../../shared/components/title/title.component";
 import { LogoComponent } from "../../shared/components/logo/logo.component";
-//import { LoginFormComponent } from "./login-form/login-form.component";
-
+import { LoginFormComponent } from "./login-form/login-form.component";
 
 export class LoginComponent {
 
@@ -13,6 +12,7 @@ export class LoginComponent {
         this.logo = new LogoComponent("../www/assets/images/logo3.png","Le LOGO de l'application");
         this.title = new TitleComponent("Game session / Worlds of Game");
         //this.loginForm = new LoginFormComponent();
+        this.loginForm = new LoginFormComponent();
 
     }
 
@@ -28,7 +28,7 @@ export class LoginComponent {
 
         this.logo.display(parent);
         this.title.display(parent);
-        //this.loginForm.display(parent);
+        this.loginForm.display(parent);
 
         document.body.appendChild(parent);
     }
