@@ -23,6 +23,13 @@ export class HomeComponent {
                 value: "search"
             }
         );
+        this.returnButton = new ButtonComponent(
+            "Return",
+            {
+                type: "submit",
+                value: "return"
+            }
+        );
     }
 
     display(parent) {
@@ -31,6 +38,7 @@ export class HomeComponent {
         this.question.display(parent);
         this.proposeButton.display(parent);
         this.searchButton.display(parent);
+        this.returnButton.display(parent);
         
         document.body.appendChild(parent);
     }
