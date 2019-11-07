@@ -16,7 +16,7 @@ export class RegisterFormComponent {
                 type: "submit",
                 value: "save"
             }
-        )
+        );
         this.loading = new LoadingComponent();
         this.genderMrLabel = new LabelComponent("Mr : ", {
             for: "Mr"
