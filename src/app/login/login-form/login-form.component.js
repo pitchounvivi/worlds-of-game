@@ -10,13 +10,13 @@ export class LoginFormComponent {
             id: "login",
             type: "mail",
             placeholder: "Your address mail",
-            value: this.user.email
+            value: ""
         });
         this.passwordInput = new InputComponent({
             id: "password",
             type: "password",
             placeholder: "Your password",
-            value: this.user.password
+            value: ""
         });
         this.goButton = new ButtonComponent(
             "Go",
