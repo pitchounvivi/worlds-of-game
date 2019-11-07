@@ -38,63 +38,63 @@ export class RegisterFormComponent {
             id: "surname",
             type: "text",
             placeholder: "surname",
-            value: this.user.surname,
+            value: "",
             label: "Surname : "
         });
         this.firstnameInput = new InputComponent({
             id: "firstname",
             type: "text",
             placeholder: "firstname",
-            value: this.user.firstName,
+            value: "",
             label: "Firstname : "
         });
         this.lastnameInput = new InputComponent({
             id: "lastname",
             type: "text",
             placeholder: "lastname",
-            value: this.user.lastName,
+            value: "",
             label: "Lastname : "
         });
         this.mailInput = new InputComponent({
             id: "mail",
             type: "mail",
             placeholder: "Email",
-            value: this.user.email,
+            value: "",
             label: "Mail : "
         });
         this.phoneInput = new InputComponent({
             id: "phone",
             type: "phone",
             placeholder: "phone",
-            value: this.user.phone,
+            value: "",
             label: "Phone : "
         });
         this.addressInput = new InputComponent({
             id: "address",
             type: "text",
             placeholder: "your address",
-            value: this.user.adress,
+            value: "",
             label: "Address : "
         });
         this.cityInput = new InputComponent({
             id: "city",
             type: "text",
             placeholder: "your city",
-            value: this.user.city,
+            value: "",
             label: "City : "
         });
         this.zipCodeInput = new InputComponent({
             id: "zipCode",
             type: "text",
             placeholder: "your zipCode",
-            value: this.user.zip,
+            value: "",
             label: "Zip Code : "
         });
         this.passwordInput = new InputComponent({
             id: "password",
             type: "password",
             placeholder: "Password",
-            value: this.user.password,
+            value: "",
             label: "Password : "
         });
     }
