@@ -5,9 +5,6 @@ import { LoginFormComponent } from "./login-form/login-form.component";
 export class LoginComponent {
 
     constructor() {
-        // this.registerName = "?";
-        // this.user = "?";
-
         this.logo = new LogoComponent("../www/assets/images/logo3.png","Le LOGO de l'application");
         this.title = new TitleComponent("Game session / Worlds of Game");
         this.loginForm = new LoginFormComponent();
