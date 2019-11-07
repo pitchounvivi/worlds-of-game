@@ -15,10 +15,6 @@ export class LoginComponent {
     }
 
     display(parent){
-        // let registerButtonComponent = new RegisterButtonComponent();
-        // registerButtonComponent.name = this.registerName;
-        // registerButtonComponent.display(parent);
-
         this.logo.display(parent);
         this.title.display(parent);
         this.loginForm.display(parent);
