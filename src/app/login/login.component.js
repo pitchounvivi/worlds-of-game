@@ -6,7 +6,7 @@ import { RegisterButtonComponent } from "./register-button/register-button.compo
 export class LoginComponent {
 
     constructor() {
-        this.logo = new LogoComponent("../www/assets/images/logo3.png","Le LOGO de l'application");
+        this.logo = new LogoComponent("assets/images/logo3.png","Le LOGO de l'application");
         this.title = new TitleComponent("Game session / Worlds of Game");
         this.loginForm = new LoginFormComponent();
         this.registerButton = new RegisterButtonComponent("Register");
