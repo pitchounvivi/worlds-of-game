@@ -1,50 +1,55 @@
-import { Component } from "../../../shared/components/component";
+import { InputComponent } from "../../../shared/components/input/input.component";
+import { ButtonComponent } from "../../../shared/components/button/button.component";
 
-export class LoginFormComponent extends Component{
+export class LoginFormComponent{
 
-    constructor(user, loginName) {
-        super();
-        this.value = user;   
-        this.name = loginName;    
+    constructor() {
+        this.loginInput = new InputComponent({
+            id: "login",
+            type: "mail",
+            placeholder: "Your address mail",
+            value: "user"
+        });
+        this.passwordInput = new InputComponent({
+            id: "password",
+            type: "password",
+            placeholder: "Your password",
+            value: "user"
+        });
+        this.goButton = new ButtonComponent(
+            "Go",
+            {
+                type: "submit",
+                value: "go"
+            }
+        )
+        this.registerButton = new ButtonComponent(
+            "Register",
+            {
+                type: "submit",
+                value: "register"
+            }
+        )  
     }
 
     display(parent){
-        const containerElement = document.createElement("div");
-        const formElement = document.createElement("form");
-        const emailElement = document.createElement("input");
-        const passwordElement = document.createElement("input");
-        const buttonElement = document.createElement("button");
-        let buttonText = document.createTextNode(this.name);
+        const element = document.createElement("login-form");
+        this.form = document.createElement("form");
+        const loginZone = document.createElement("div");
+        const passwordZone = document.createElement("div");
 
-        
-        this.setAttributesTo(formElement, {
-            method: "post",
-            action: ""
-        });
+        this.form.setAttribute("method", "post");
+        this.form.setAttribute("action", "");
 
-        this.setAttributesTo(emailElement, {
-            type: "mail",
-            placeholder: "email",
-            value: this.user.login
-        });
+        element.appendChild(this.form);
+        this.form.appendChild(loginZone);
+        this.loginInput.display(this.form);
+        this.form.appendChild(passwordZone);
+        this.passwordInput.display(passwordZone);
+        this.goButton.display(this.form);
+        this.registerButton.display(this.form);
 
-        this.setAttributesTo(passwordElement, {
-            type: "password",
-            placeholder: "password",
-            value: this.user.password  
-        });
-
-        this.setAttributesTo(buttonElement, {
-            type: "submit",
-            name: this.name
-        });
-
-        formElement.appendChild(emailElement);
-        formElement.appendChild(passwordElement);
-        buttonElement.appendChild(buttonText);
-        formElement.appendChild(buttonElement);
-        containerElement.appendChild(formElement);
-        parent.appendChild(containerElement);
+        parent.appendChild(element);
 
     }
 
