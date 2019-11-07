@@ -3,6 +3,7 @@ import { ButtonComponent } from "../../../shared/components/button/button.compon
 import { UserService } from "../../../shared/services/user.service";
 import { LoadingComponent } from "../../../shared/components/loading/loading.component";
 import { AlertComponent } from "../../../shared/components/alert/alert.component";
+import { HomeComponent } from "../../home/home.component";
 
 export class LoginFormComponent {
 
@@ -101,6 +102,17 @@ export class LoginFormComponent {
 
     postSuccess(user) {
         console.log("Success");
+
+        window.history.pushState(
+            {},
+            "Home Page",
+            "/Home"
+        )
+
+        document.body.innerHTML = "";
+        const home = new HomeComponent();
+        home.display();
+
     }
 
     postError(status) {
@@ -114,7 +126,7 @@ export class LoginFormComponent {
             this.alertError.display(this.form);
         }
         else if (404 === status) {
-            this.alertError.error = "File not found";
+            this.alertError.error = "User not found";
             this.alertError.display(this.form);
         }
         else if (500 === status) {
@@ -123,6 +135,10 @@ export class LoginFormComponent {
         }
         else if (0 === status) {
             this.alertError.error = "Network Error";
+            this.alertError.display(this.form);
+        }
+        else if (200 == status){
+            this.alertError.error = "Utilisateur OK";
             this.alertError.display(this.form);
         }
         else {
