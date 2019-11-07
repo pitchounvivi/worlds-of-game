@@ -21,6 +21,16 @@ export class UserService {
         });
     }
 
+    static postLogin(){
+        return $.ajax({
+            url: `http://worldsofgame.alwaysdata.net/user.php?email=${user.email}&password=${user.password}`,
+            method: "GET",
+            contentType: "application/json",
+            dataType: "json"
+        })
+    }
+
+
     // version requête en javascript natif
     static put() {
         return new Promise(
