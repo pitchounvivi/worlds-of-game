@@ -2,9 +2,9 @@ import { Component } from "../../../shared/components/component";
 
 export class RegisterButtonComponent extends Component {
 
-    constructor() {
+    constructor(name) {
         super();
-        this.name = "?";
+        this.name = name;
     }
 
     display(parent){
@@ -13,7 +13,8 @@ export class RegisterButtonComponent extends Component {
         let registerButtonText = document.createTextNode(this.name);
 
         const attributes = {
-            type: "submit"
+            type: "submit",
+            value: "register"
         };
 
         this.setAttributesTo(registerButton, attributes);
