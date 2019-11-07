@@ -6,9 +6,6 @@ import { LogoComponent } from "../../shared/components/logo/logo.component";
 export class LoginComponent {
 
     constructor() {
-        // this.src = "?";
-        // this.alt = "?";
-        // this.text = "?";
         // this.loginName = "?";
         // this.registerName = "?";
         // this.user = "?";
@@ -20,11 +17,6 @@ export class LoginComponent {
     }
 
     display(parent){
-        // let logoComponent = new LogoComponent();
-        // logoComponent.src = this.src;
-        // logoComponent.alt = this.alt;
-        // logoComponent.display(parent);
-
         // let loginFormComponent = new LoginFormComponent();
         // loginFormComponent.name = this.loginName;
         // loginFormComponent.user = this.user;
