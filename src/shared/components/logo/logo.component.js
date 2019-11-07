@@ -1,8 +1,8 @@
 export class LogoComponent {
 
-    constructor (){
-        this.src = "?";
-        this.alt = "?";
+    constructor (src,alt){
+        this.src = src;
+        this.alt = alt;
     }
 
     display(parent){
