@@ -66,7 +66,7 @@ export class LoginFormComponent {
 
         this.postStart();
         UserService
-            .post()
+            .postLogin()
             .then((data) => {
                 this.postSuccess(data);
                 this.postEnd();
