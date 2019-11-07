@@ -8,7 +8,6 @@ export class RegisterButtonComponent extends Component {
     }
 
     display(parent){
-        const containerElement = document.createElement("div");
         const registerButton = document.createElement("button");
         let registerButtonText = document.createTextNode(this.name);
 
@@ -20,8 +19,7 @@ export class RegisterButtonComponent extends Component {
         this.setAttributesTo(registerButton, attributes);
         
         registerButton.appendChild(registerButtonText);
-        containerElement.appendChild(registerButton);
-
-        parent.appendChild(containerElement);
+        
+        parent.appendChild(registerButton);
     }
 }
