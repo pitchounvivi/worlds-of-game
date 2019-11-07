@@ -233,5 +233,21 @@ export class RegisterFormComponent {
             this.alertError.error = "Account already created";
             this.alertError.display(this.form);
         }
+        else if (404 === status){
+            this.alertError.error = "File not found";
+            this.alertError.display(this.form);
+        }
+        else if (500 === status){
+            this.alertError.error = "Server Error";
+            this.alertError.display(this.form);
+        }
+        else if (0 === status){
+            this.alertError.error = "Network Error";
+            this.alertError.display(this.form);
+        }
+        else{
+            this.alertError.error = "I don't know !!!";
+            this.alertError.display(this.form);
+        }
     }
 }
