@@ -1,3 +1,6 @@
+# Worlds of Game
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bbbbd22c43a24ca2b21e0827755dbc61)](https://www.codacy.com/manual/pitchounvivi/worlds-of-game-api?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=pitchounvivi/worlds-of-game-api&amp;utm_campaign=Badge_Grade)
 
 ### Requirement : nodeJS has to be installed 
 [@see Node.js](https://nodejs.org/en/) *follow recommended installation*
